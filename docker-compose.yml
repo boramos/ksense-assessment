@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  assessment:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - ./submit.js:/app/submit.js
+    env_file:
+      - .env
+    command: ["node", "submit.js"]
